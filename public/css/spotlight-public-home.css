@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--sp-green-950:#123d2d;--sp-green-900:#174b37;--sp-green-800:#1d6045;--sp-green-700:#287653;--sp-sage-100:#e8f1e9;--sp-sage-50:#f5f8f4;--sp-ink:#20352b;--sp-muted:#718078;--sp-line:#e4ebe5;--sp-white:#fff;--sp-shadow:0 14px 38px rgba(24,67,48,.08)}
+.sp-home{margin:0;background:var(--sp-sage-50);color:var(--sp-ink);font-family:'DM Sans',Arial,sans-serif;line-height:1.65}.sp-home *{box-sizing:border-box}.sp-home a{text-decoration:none;color:inherit}.sp-header{height:82px;padding:0 max(6%,calc((100% - 1180px)/2));display:flex;align-items:center;justify-content:space-between;gap:28px;background:#fff;border-bottom:1px solid var(--sp-line);position:relative;z-index:5}.sp-brand{display:flex;align-items:center;gap:11px;min-width:max-content}.sp-brand-mark{width:42px;height:42px;display:grid;place-items:center;background:var(--sp-green-900);color:#fff;border-radius:12px;font:800 15px 'Manrope',sans-serif;letter-spacing:-1px}.sp-brand-copy{display:grid;line-height:1.25}.sp-brand-copy strong{font:800 13px 'Manrope',sans-serif;letter-spacing:.08em;color:var(--sp-green-950)}.sp-brand-copy small{font-size:10px;color:var(--sp-muted);margin-top:4px}.sp-nav{display:flex;align-items:center;gap:30px}.sp-nav>a{font-size:13px;font-weight:600;color:#64736a;transition:.2s}.sp-nav>a:hover,.sp-nav>a.is-active{color:var(--sp-green-800)}.sp-nav>a.is-active{position:relative}.sp-nav>a.is-active:after{content:'';position:absolute;left:0;right:0;bottom:-30px;height:3px;background:var(--sp-green-700);border-radius:3px}.sp-nav .sp-login{padding:10px 20px;border-radius:8px;background:var(--sp-green-900);color:#fff}.sp-nav .sp-login:hover{background:var(--sp-green-700);color:#fff}.sp-menu-toggle{display:none;border:1px solid var(--sp-line);background:#fff;color:var(--sp-green-900);border-radius:8px;padding:8px 12px;font-size:20px}.sp-home main{max-width:1180px;width:88%;margin:auto}.sp-hero{min-height:390px;margin:34px 0 0;padding:62px 7%;border-radius:20px;overflow:hidden;position:relative;display:flex;align-items:center;background:linear-gradient(112deg,rgba(18,61,45,.98) 0%,rgba(29,96,69,.94) 58%,rgba(52,119,85,.86) 100%);color:#fff}.sp-hero:before,.sp-hero:after{content:'';position:absolute;border:1px solid rgba(255,255,255,.13);border-radius:50%;pointer-events:none}.sp-hero:before{width:420px;height:420px;right:-65px;top:-165px}.sp-hero:after{width:300px;height:300px;right:15px;bottom:-205px}.sp-hero-content{max-width:670px;position:relative;z-index:1}.sp-kicker,.sp-eyebrow{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.sp-kicker{color:#d6eadb}.sp-hero h1{font:800 clamp(30px,4vw,48px)/1.16 'Manrope',sans-serif;letter-spacing:-1.7px;margin:17px 0 16px;max-width:680px}.sp-hero p{font-size:14px;color:#e1eee5;max-width:570px;margin:0;line-height:1.85}.sp-hero-actions{display:flex;align-items:center;gap:24px;margin-top:27px}.sp-button{display:inline-flex;align-items:center;justify-content:center;gap:15px;padding:12px 19px;border-radius:8px;font-size:12px;font-weight:700;transition:transform .2s,background .2s}.sp-button:hover{transform:translateY(-2px)}.sp-button-light{background:#fff;color:var(--sp-green-900)!important}.sp-button-light:hover{background:#eaf3eb}.sp-hero-link{font-size:12px;font-weight:600;color:#f1f7f2}.sp-hero-decoration{position:absolute;right:8%;top:0;width:280px;height:100%;opacity:.6}.sp-hero-decoration span{position:absolute;display:block;border-radius:18px;border:1px solid rgba(255,255,255,.18);transform:rotate(35deg)}.sp-hero-decoration span:nth-child(1){width:130px;height:190px;right:50px;top:65px;background:rgba(255,255,255,.04)}.sp-hero-decoration span:nth-child(2){width:90px;height:135px;right:5px;top:125px}.sp-hero-decoration span:nth-child(3){width:70px;height:105px;right:145px;top:185px;background:rgba(255,255,255,.06)}.sp-shortcuts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0 64px}.sp-shortcuts>a{display:flex;align-items:center;gap:13px;padding:17px 18px;background:#fff;border:1px solid var(--sp-line);border-radius:12px;box-shadow:0 5px 18px rgba(24,67,48,.035);transition:.2s}.sp-shortcuts>a:hover{border-color:#b7d0bd;transform:translateY(-2px)}.sp-shortcut-icon{width:39px;height:39px;display:grid;place-items:center;border-radius:10px;background:var(--sp-sage-100);color:var(--sp-green-800);font-size:20px}.sp-shortcuts>a>span:nth-child(2){display:grid;flex:1}.sp-shortcuts strong{font:700 12px 'Manrope',sans-serif;color:var(--sp-green-950)}.sp-shortcuts small{font-size:10px;color:var(--sp-muted);margin-top:3px}.sp-shortcuts b{color:var(--sp-green-700);font-size:17px}.sp-section{padding:0 0 62px}.sp-section-heading{margin-bottom:22px}.sp-eyebrow{color:var(--sp-green-700)}.sp-section h2,.sp-directory-panel h2,.sp-career-banner h2{font:800 27px/1.25 'Manrope',sans-serif;letter-spacing:-.7px;color:var(--sp-green-950);margin:7px 0}.sp-section-heading p,.sp-directory-panel p{font-size:12px;color:var(--sp-muted);margin:0;line-height:1.8}.sp-inspiration-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.sp-person-card{display:flex;gap:17px;padding:17px;background:#fff;border:1px solid var(--sp-line);border-radius:13px;box-shadow:0 6px 20px rgba(24,67,48,.035);min-width:0}.sp-person-photo-wrap{width:112px;min-width:112px;height:142px;border-radius:9px;overflow:hidden;background:var(--sp-sage-100)}.sp-person-photo{width:100%;height:100%;object-fit:cover}.sp-person-content{min-width:0}.sp-person-tag{display:inline-block;background:var(--sp-sage-100);color:var(--sp-green-800);font-size:9px;font-weight:700;padding:4px 8px;border-radius:20px}.sp-person-content h3{font:700 16px 'Manrope',sans-serif;color:var(--sp-green-950);margin:8px 0 3px;overflow-wrap:anywhere}.sp-person-meta,.sp-person-status{font-size:10px;color:var(--sp-muted);margin:0 0 7px}.sp-person-status{color:var(--sp-green-700);font-weight:700}.sp-person-content blockquote{margin:8px 0 0;padding-left:10px;border-left:2px solid #9cbea4;color:#66766c;font-size:11px;line-height:1.7}.sp-directory-section{padding-top:2px}.sp-directory-panel{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:30px 34px;background:#e8f1e9;border:1px solid #dbe8dc;border-radius:15px}.sp-directory-panel>div{max-width:620px}.sp-directory-panel h2{font-size:23px}.sp-button-green{background:var(--sp-green-900);color:#fff!important;white-space:nowrap}.sp-button-green:hover{background:var(--sp-green-700)}.sp-heading-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}.sp-text-link{font-size:11px;font-weight:700;color:var(--sp-green-800);white-space:nowrap;padding-bottom:4px}.sp-agenda-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.sp-agenda-card{overflow:hidden;border:1px solid var(--sp-line);border-radius:13px;background:#fff;box-shadow:0 6px 20px rgba(24,67,48,.035)}.sp-agenda-image-wrap,.sp-agenda-placeholder{height:165px;background:#e8f1e9;overflow:hidden}.sp-agenda-image{width:100%;height:100%;object-fit:cover;display:block}.sp-agenda-placeholder{display:grid;place-content:center;text-align:center;color:var(--sp-green-800)}.sp-agenda-placeholder span{font:800 30px 'Manrope',sans-serif;opacity:.55}.sp-agenda-placeholder small{font-size:9px;letter-spacing:.12em;text-transform:uppercase}.sp-agenda-content{padding:17px}.sp-agenda-date{font-size:9px;color:var(--sp-green-700);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.sp-agenda-content h3{font:700 14px/1.5 'Manrope',sans-serif;color:var(--sp-green-950);margin:7px 0}.sp-agenda-location{font-size:10px;color:var(--sp-green-700);margin:0 0 7px}.sp-agenda-description{font-size:11px;line-height:1.75;color:var(--sp-muted);margin:0}.sp-empty{text-align:center;padding:35px 20px;border:1px dashed #cbd9ce;border-radius:13px;background:#fff}.sp-empty>span{font-size:25px;color:var(--sp-green-700)}.sp-empty h3{font:700 15px 'Manrope',sans-serif;color:var(--sp-green-950);margin:8px 0 4px}.sp-empty p{font-size:11px;color:var(--sp-muted);margin:0}.sp-career-banner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:32px 6%;margin:0 0 58px;background:var(--sp-green-950);border-radius:16px;color:#fff}.sp-career-banner h2{color:#fff;font-size:24px}.sp-career-banner p{font-size:11px;color:#d6e6da;margin:0}.sp-footer{padding:30px 6% 25px;background:#fff;border-top:1px solid var(--sp-line);text-align:center}.sp-footer-brand{justify-content:center}.sp-footer>p{font-size:11px;color:var(--sp-muted);margin:13px 0}.sp-footer>small{font-size:9px;color:#94a198}.sp-menu-toggle{cursor:pointer}
+@media(max-width:850px){.sp-header{padding:0 5%}.sp-nav{gap:17px}.sp-nav>a{font-size:11px}.sp-hero-decoration{right:1%;opacity:.35}.sp-home main{width:90%}.sp-shortcuts{margin-bottom:50px}.sp-agenda-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.sp-header{height:70px}.sp-brand-mark{width:37px;height:37px}.sp-brand-copy strong{font-size:11px}.sp-brand-copy small{font-size:9px}.sp-menu-toggle{display:block}.sp-nav{display:none;position:absolute;top:69px;left:0;right:0;padding:15px 5% 20px;background:#fff;border-bottom:1px solid var(--sp-line);box-shadow:var(--sp-shadow);align-items:stretch;gap:0}.sp-nav.is-open{display:flex;flex-direction:column}.sp-nav>a{padding:11px 4px;font-size:13px}.sp-nav>a.is-active:after{display:none}.sp-nav .sp-login{text-align:center;margin-top:8px}.sp-hero{margin-top:18px;min-height:350px;padding:40px 7%;border-radius:14px}.sp-hero h1{font-size:32px}.sp-hero p{font-size:12px}.sp-hero-actions{align-items:flex-start;flex-direction:column;gap:15px}.sp-hero-decoration{display:none}.sp-shortcuts{grid-template-columns:1fr;gap:9px;margin:14px 0 43px}.sp-shortcuts>a{padding:13px}.sp-section{padding-bottom:44px}.sp-section h2{font-size:23px}.sp-inspiration-grid,.sp-agenda-grid{grid-template-columns:1fr}.sp-person-card{gap:12px;padding:13px}.sp-person-photo-wrap{width:88px;min-width:88px;height:116px}.sp-person-content h3{font-size:14px}.sp-person-content blockquote{font-size:10px}.sp-directory-panel,.sp-career-banner{align-items:flex-start;flex-direction:column;padding:24px}.sp-directory-panel h2,.sp-career-banner h2{font-size:21px}.sp-heading-row{align-items:flex-start;flex-direction:column;gap:8px}.sp-agenda-image-wrap,.sp-agenda-placeholder{height:180px}.sp-career-banner{margin-bottom:40px}}
+
+/* Revisi identitas FST dan penyelarasan kartu akses cepat */
+.sp-brand-logo{width:48px;height:48px;object-fit:contain;display:block;border-radius:9px;background:#fff}
+.sp-footer .sp-brand-logo{width:46px;height:46px}
+.sp-shortcuts>a{background:linear-gradient(135deg,#fff 0%,#f1f7f1 100%);border:1px solid #dce9de;box-shadow:0 8px 22px rgba(18,61,45,.06);min-height:78px}
+.sp-shortcuts>a:hover{background:#e8f1e9;border-color:#b8d0bd;box-shadow:0 12px 26px rgba(18,61,45,.10)}
+.sp-shortcut-icon{background:#dcebdd;color:#174b37;font-weight:800}
+.sp-shortcuts b{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:#e4f0e6;color:#174b37}
+.sp-agenda-placeholder{gap:8px}
+.sp-agenda-placeholder img{width:68px;height:66px;object-fit:contain;justify-self:center;border-radius:8px}
+.sp-agenda-placeholder small{color:#174b37;font-weight:700}
+
+/* Carousel Alumni Inspiratif: dua kartu di desktop, satu kartu di ponsel */
+.sp-inspiration-carousel{display:grid;grid-template-columns:42px minmax(0,1fr) 42px;align-items:center;gap:12px}
+.sp-inspiration-viewport{overflow:hidden;min-width:0;padding:2px}
+.sp-inspiration-track{display:flex;gap:17px;transition:transform .38s cubic-bezier(.22,.75,.25,1);will-change:transform}
+.sp-inspiration-track .sp-person-card{flex:0 0 calc((100% - 17px)/2);min-width:0}
+.sp-carousel-arrow{width:40px;height:40px;border:1px solid #d5e4d8;border-radius:50%;display:grid;place-items:center;background:#fff;color:#174b37;font-size:27px;line-height:1;cursor:pointer;box-shadow:0 5px 15px rgba(18,61,45,.07);transition:background .2s,color .2s,opacity .2s}
+.sp-carousel-arrow:hover:not(:disabled){background:#174b37;color:#fff}
+.sp-carousel-arrow:disabled{opacity:.35;cursor:not-allowed}
+.sp-carousel-dots{display:flex;justify-content:center;gap:7px;margin-top:17px}
+.sp-carousel-dots button{width:7px;height:7px;padding:0;border:0;border-radius:20px;background:#cbd9ce;cursor:pointer;transition:width .2s,background .2s}
+.sp-carousel-dots button.is-active{width:23px;background:#1d6045}
+@media(max-width:640px){
+ .sp-brand-logo{width:42px;height:42px}
+ .sp-inspiration-carousel{grid-template-columns:32px minmax(0,1fr) 32px;gap:6px}
+ .sp-carousel-arrow{width:31px;height:31px;font-size:22px}
+ .sp-inspiration-track .sp-person-card{flex-basis:100%}
+}
+/* =================================
+   PENYESUAIAN UKURAN FONT BERANDA
+================================= */
+
+/* Navbar */
+.sp-brand-copy strong {
+    font-size: 15px;
+}
+
+.sp-brand-copy small {
+    font-size: 12px;
+}
+
+.sp-nav > a {
+    font-size: 14px;
+}
+
+/* Hero / Judul utama */
+.sp-kicker {
+    font-size: 12px;
+}
+
+.sp-hero h1 {
+    font-size: clamp(40px, 5vw, 56px);
+    line-height: 1.2;
+}
+
+.sp-hero p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.sp-button {
+    font-size: 14px;
+}
+
+.sp-hero-link {
+    font-size: 14px;
+}
+
+/* Menu Direktori, Newsletter, Info Loker */
+.sp-shortcuts strong {
+    font-size: 15px;
+}
+
+.sp-shortcuts small {
+    font-size: 12px;
+}
+
+.sp-shortcuts b {
+    font-size: 20px;
+}
+
+/* Judul setiap bagian */
+.sp-eyebrow {
+    font-size: 12px;
+}
+
+.sp-section h2 {
+    font-size: 31px;
+}
+
+.sp-section-heading p {
+    font-size: 15px;
+}
+
+.sp-text-link {
+    font-size: 13px;
+}
+
+/* Alumni Inspiratif */
+.sp-person-tag {
+    font-size: 11px;
+}
+
+.sp-person-content h3 {
+    font-size: 18px;
+}
+
+.sp-person-meta,
+.sp-person-status {
+    font-size: 12px;
+}
+
+.sp-person-content blockquote {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Direktori Alumni */
+.sp-directory-panel h2 {
+    font-size: 27px;
+}
+
+.sp-directory-panel p {
+    font-size: 15px;
+}
+
+/* Newsletter / Agenda */
+.sp-agenda-date {
+    font-size: 11px;
+}
+
+.sp-agenda-content h3 {
+    font-size: 17px;
+}
+
+.sp-agenda-location {
+    font-size: 12px;
+}
+
+.sp-agenda-description {
+    font-size: 13px;
+}
+
+/* Banner perjalanan karier */
+.sp-career-banner h2 {
+    font-size: 27px;
+}
+
+.sp-career-banner p {
+    font-size: 14px;
+}
+
+/* Footer */
+.sp-footer > p {
+    font-size: 13px;
+}
+
+.sp-footer > small {
+    font-size: 11px;
+}
+
+/* Tampilan HP */
+@media (max-width: 640px) {
+    .sp-brand-copy strong {
+        font-size: 13px;
+    }
+
+    .sp-brand-copy small {
+        font-size: 10px;
+    }
+
+    .sp-hero h1 {
+        font-size: 36px;
+    }
+
+    .sp-hero p {
+        font-size: 14px;
+    }
+
+    .sp-section h2 {
+        font-size: 26px;
+    }
+
+    .sp-section-heading p {
+        font-size: 14px;
+    }
+
+    .sp-shortcuts strong {
+        font-size: 14px;
+    }
+
+    .sp-shortcuts small {
+        font-size: 12px;
+    }
+
+    .sp-person-content h3 {
+        font-size: 16px;
+    }
+
+    .sp-person-meta,
+    .sp-person-status {
+        font-size: 11px;
+    }
+
+    .sp-person-content blockquote {
+        font-size: 12px;
+    }
+
+    .sp-agenda-content h3 {
+        font-size: 16px;
+    }
+
+    .sp-agenda-description {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+.sp-directory-page{min-height:100vh;background:#f5f8f4;font-family:'DM Sans',Arial,sans-serif}
+.sp-directory-main{width:min(1180px,90%);margin:0 auto;padding:43px 0 76px}
+.sp-directory-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:0 0 27px;border-bottom:1px solid #e2ebe3}
+.sp-directory-heading h1{margin:7px 0 8px;color:#123d2d;font:800 clamp(28px,3vw,36px)/1.2 'Manrope',sans-serif;letter-spacing:-1px}
+.sp-directory-heading p{margin:0;color:#718078;font-size:13px;line-height:1.7}
+.sp-directory-count{display:grid;gap:3px;text-align:right;padding:11px 17px;background:#e8f1e9;border:1px solid #dce9de;border-radius:11px;min-width:135px}
+.sp-directory-count strong{font:800 22px 'Manrope',sans-serif;color:#174b37}.sp-directory-count span{font-size:10px;color:#718078}
+.sp-directory-tools{margin:24px 0 25px;padding:18px 20px;background:#fff;border:1px solid #e4ebe5;border-radius:13px;box-shadow:0 7px 22px rgba(24,67,48,.035)}
+.sp-directory-search label{display:block;margin-bottom:9px;color:#314b3b;font-size:11px;font-weight:700}
+.sp-directory-search-row{display:flex;align-items:center;gap:10px;min-width:0}
+.sp-search-icon{font-size:24px;line-height:1;color:#789080}.sp-directory-search input{flex:1;min-width:0;height:43px;padding:0 13px;border:1px solid #dce6de;border-radius:8px;background:#fbfdfb;color:#20352b;font:12px 'DM Sans',sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+.sp-directory-search input:focus{border-color:#6e9b7a;box-shadow:0 0 0 3px rgba(40,118,83,.10)}
+.sp-directory-search button{height:43px;padding:0 20px;border:0;border-radius:8px;background:#174b37;color:#fff;font:700 11px 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap;transition:background .2s}
+.sp-directory-search button:hover{background:#287653}.sp-directory-reset{font-size:11px;color:#52745d;text-decoration:none;padding:10px 5px}.sp-directory-reset:hover{text-decoration:underline}
+.sp-directory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.sp-directory-card{min-width:0;overflow:hidden;background:#fff;border:1px solid #e3ebe4;border-radius:12px;box-shadow:0 6px 20px rgba(24,67,48,.045);transition:transform .2s,box-shadow .2s,border-color .2s}
+.sp-directory-card:hover{transform:translateY(-3px);border-color:#c5d9c9;box-shadow:0 12px 26px rgba(24,67,48,.09)}
+.sp-directory-photo-link{display:block;height:205px;overflow:hidden;background:#e8f1e9}.sp-directory-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center 25%;transition:transform .35s}.sp-directory-card:hover .sp-directory-photo{transform:scale(1.035)}
+.sp-directory-photo-fallback{height:100%;display:grid;place-items:center;background:linear-gradient(145deg,#e8f1e9,#d5e5d8);color:#477456;font:800 54px 'Manrope',sans-serif}
+.sp-directory-card-body{padding:15px 15px 14px}.sp-directory-card h2{margin:0 0 5px;color:#173f2e;font:700 14px/1.4 'Manrope',sans-serif;overflow-wrap:anywhere}.sp-directory-prodi{margin:0 0 13px;color:#7a8980;font-size:10px;line-height:1.5;min-height:15px}
+.sp-directory-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px}.sp-directory-year,.sp-directory-status{display:inline-flex;align-items:center;min-height:23px;padding:4px 8px;border-radius:20px;font-size:9px;font-weight:700}.sp-directory-year{background:#f0f5f0;color:#607267}.sp-directory-status{background:#e8f1e9;color:#287653}
+.sp-directory-detail{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:11px;border-top:1px solid #edf1ed;color:#1d6045;font-size:10px;font-weight:700;text-decoration:none}.sp-directory-detail span{font-size:16px;transition:transform .2s}.sp-directory-detail:hover span{transform:translateX(3px)}
+.sp-directory-pagination{display:flex;justify-content:center;margin-top:30px}.sp-directory-pagination nav{display:flex;justify-content:center}.sp-directory-pagination nav>div:first-child{display:none}.sp-directory-pagination nav>div:last-child{display:flex;align-items:center;gap:5px}.sp-directory-pagination a,.sp-directory-pagination span[aria-current],.sp-directory-pagination span[aria-disabled]{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 10px;border:1px solid #dfe8e0;border-radius:7px;background:#fff;color:#54705d;font-size:11px;text-decoration:none}.sp-directory-pagination span[aria-current]{background:#174b37;border-color:#174b37;color:#fff}.sp-directory-pagination a:hover{background:#e8f1e9;border-color:#c6dac9}
+.sp-directory-empty{padding:55px 20px;text-align:center;background:#fff;border:1px dashed #cbd9ce;border-radius:13px}.sp-directory-empty-icon{display:grid;place-items:center;width:48px;height:48px;margin:0 auto 13px;border-radius:50%;background:#e8f1e9;color:#287653;font-size:24px}.sp-directory-empty h2{margin:0 0 7px;color:#174b37;font:700 17px 'Manrope',sans-serif}.sp-directory-empty p{max-width:450px;margin:0 auto;color:#718078;font-size:11px;line-height:1.8}.sp-directory-empty a{display:inline-block;margin-top:15px;color:#1d6045;font-size:11px;font-weight:700;text-decoration:none}
+@media(max-width:1000px){.sp-directory-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.sp-directory-main{padding:30px 0 52px}.sp-directory-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.sp-directory-photo-link{height:175px}.sp-directory-card-body{padding:12px}.sp-directory-card h2{font-size:12px}.sp-directory-heading{align-items:flex-start}.sp-directory-count{min-width:105px;padding:9px 11px}.sp-directory-count strong{font-size:19px}}
+@media(max-width:480px){.sp-directory-heading{flex-direction:column;align-items:stretch;gap:14px}.sp-directory-count{text-align:left;width:max-content}.sp-directory-search-row{flex-wrap:wrap}.sp-search-icon{display:none}.sp-directory-search input{flex-basis:100%}.sp-directory-search button{flex:1}.sp-directory-grid{gap:10px}.sp-directory-photo-link{height:150px}.sp-directory-card-body{padding:10px}.sp-directory-prodi{font-size:9px}.sp-directory-year,.sp-directory-status{font-size:8px;padding:4px 6px}}
+/* PENYESUAIAN UKURAN TULISAN DIREKTORI ALUMNI */
+
+.sp-directory-heading h1 {
+    font-size: clamp(34px, 3.2vw, 40px);
+}
+
+.sp-directory-heading p {
+    font-size: 15px;
+}
+
+.sp-directory-count strong {
+    font-size: 25px;
+}
+
+.sp-directory-count span {
+    font-size: 12px;
+}
+
+.sp-directory-search label {
+    font-size: 14px;
+}
+
+.sp-directory-search input {
+    font-size: 14px;
+}
+
+.sp-directory-search button,
+.sp-directory-reset {
+    font-size: 13px;
+}
+
+.sp-directory-card h2 {
+    font-size: 17px;
+}
+
+.sp-directory-prodi {
+    font-size: 13px;
+}
+
+.sp-directory-year,
+.sp-directory-status {
+    font-size: 11px;
+}
+
+.sp-directory-detail {
+    font-size: 13px;
+}
+
+.sp-directory-pagination a,
+.sp-directory-pagination span {
+    font-size: 13px;
+}
+
+.sp-directory-empty h2 {
+    font-size: 20px;
+}
+
+.sp-directory-empty p {
+    font-size: 14px;
+}
+
+.sp-directory-empty a {
+    font-size: 13px;
+}

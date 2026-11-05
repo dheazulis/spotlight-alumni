@@ -1,0 +1,102 @@
+/* Spotlight Alumni FST - tema visual global */
+:root {
+    --sa-green-950: #123d2d;
+    --sa-green-900: #174b37;
+    --sa-green-800: #1d6045;
+    --sa-green-700: #287653;
+    --sa-green-100: #e4f0e8;
+    --sa-green-50: #f1f7f2;
+    --sa-sage: #edf3ed;
+    --sa-page: #f5f7f3;
+    --sa-white: #fff;
+    --sa-text: #26352d;
+    --sa-muted: #718078;
+    --sa-border: #e1e9e2;
+    --sa-danger: #b42318;
+    --sa-radius: 12px;
+    --sa-shadow: 0 5px 18px rgba(24, 61, 43, .06);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    background: var(--sa-page) !important;
+    color: var(--sa-text) !important;
+    font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+a { transition: color .18s ease, background-color .18s ease, border-color .18s ease; }
+header {
+    background: var(--sa-green-950) !important;
+    color: var(--sa-white) !important;
+    border-color: var(--sa-border) !important;
+}
+header a { color: inherit; }
+nav a:hover { color: #cce5d3 !important; }
+main, .content { color: var(--sa-text); }
+
+/* Panel, kartu, dan permukaan konten */
+.card, .profile-card, .stat-card, .panel, .table-container, .form-card {
+    background: var(--sa-white) !important;
+    border: 1px solid var(--sa-border) !important;
+    border-radius: var(--sa-radius) !important;
+    box-shadow: var(--sa-shadow);
+}
+.card h2, .card h3, .card h4, .profile-card h2, .profile-card h3 {
+    color: var(--sa-green-900) !important;
+}
+.card:hover { border-color: #b8d2bf !important; }
+
+/* Tombol dan tautan aksi */
+button, input[type="submit"], .btn, .button, a.button, a.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+button[type="submit"], input[type="submit"], .btn-primary, .button-primary {
+    background: var(--sa-green-800) !important;
+    border-color: var(--sa-green-800) !important;
+    color: #fff !important;
+}
+button[type="submit"]:hover, input[type="submit"]:hover, .btn-primary:hover, .button-primary:hover {
+    background: var(--sa-green-950) !important;
+}
+.logout, .btn-danger, .button-danger { background: var(--sa-danger) !important; color: #fff !important; }
+
+/* Formulir */
+input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    border: 1px solid #d6e1d8;
+    border-radius: 8px;
+    color: var(--sa-text);
+    background: #fff;
+    max-width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+    outline: 3px solid rgba(40, 118, 83, .13);
+    border-color: var(--sa-green-700) !important;
+}
+label { color: #405248; font-weight: 600; }
+
+/* Tabel */
+table { border-color: var(--sa-border) !important; }
+th { background: var(--sa-green-50) !important; color: var(--sa-green-950) !important; }
+th, td { border-color: var(--sa-border) !important; }
+tr:hover td { background: #f8fbf8; }
+
+/* Pesan status */
+.notice, .alert-success, .success-message {
+    background: var(--sa-green-100) !important;
+    color: var(--sa-green-900) !important;
+    border: 1px solid #cfe2d3;
+    border-radius: 9px;
+}
+
+/* Identitas merek */
+.brand, .logo-text { color: #fff !important; }
+.role { background: var(--sa-green-100) !important; color: var(--sa-green-900) !important; }
+
+@media (max-width: 700px) {
+    header { padding: 16px 5% !important; }
+    main, .content { width: 100%; padding-left: 16px !important; padding-right: 16px !important; }
+    .menu { grid-template-columns: 1fr !important; }
+    table { display: block; max-width: 100%; overflow-x: auto; white-space: nowrap; }
+}
