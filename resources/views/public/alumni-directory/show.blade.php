@@ -29,22 +29,56 @@
         <a href="{{ route('public.alumni-directory.index') }}" class="sp-detail-back">← Kembali ke Direktori Alumni</a>
 
         <section class="sp-profile-hero">
-            <div class="sp-profile-photo-wrap">
-                @if ($alumni->foto_profil)
-                    <img src="{{ asset('storage/' . $alumni->foto_profil) }}" alt="Foto {{ $alumni->name }}" class="sp-profile-photo">
-                @else
-                    <div class="sp-profile-photo sp-profile-initial">{{ strtoupper(substr($alumni->name, 0, 1)) }}</div>
+    <div class="sp-profile-identity">
+        <div class="sp-profile-photo-wrap">
+            @if ($alumni->foto_profil)
+                <img src="{{ asset('storage/' . $alumni->foto_profil) }}"
+                     alt="Foto {{ $alumni->name }}"
+                     class="sp-profile-photo">
+            @else
+                <div class="sp-profile-photo sp-profile-initial">
+                    {{ strtoupper(substr($alumni->name, 0, 1)) }}
+                </div>
+            @endif
+        </div>
+
+        <div class="sp-profile-heading">
+            <span class="sp-detail-eyebrow">PROFIL ALUMNI</span>
+            <h1>{{ $alumni->name }}</h1>
+
+            <p>
+                {{ $alumni->program_studi ?: 'Program studi belum diisi' }}
+                @if($alumni->tahun_lulus)
+                    <span>•</span> Lulus {{ $alumni->tahun_lulus }}
                 @endif
+            </p>
+
+            @if($alumni->status_setelah_lulus)
+                <span class="sp-profile-status">
+                    {{ $alumni->status_setelah_lulus }}
+                </span>
+            @endif
+        </div>
+    </div>
+
+    <div class="sp-profile-quote">
+        <div class="sp-profile-quote-heading">
+            <span class="sp-detail-icon">❝</span>
+            <div>
+                <h2>Quotes</h2>
+                <p>Pesan dan motivasi dari alumni</p>
             </div>
-            <div class="sp-profile-heading">
-                <span class="sp-detail-eyebrow">PROFIL ALUMNI</span>
-                <h1>{{ $alumni->name }}</h1>
-                <p>{{ $alumni->program_studi ?: 'Program studi belum diisi' }}@if($alumni->tahun_lulus) <span>•</span> Lulus {{ $alumni->tahun_lulus }} @endif</p>
-                @if($alumni->status_setelah_lulus)
-                    <span class="sp-profile-status">{{ $alumni->status_setelah_lulus }}</span>
-                @endif
-            </div>
-        </section>
+        </div>
+
+        @if ($alumni->pesan_motivasi)
+            <blockquote class="sp-motivation">
+                {{ $alumni->pesan_motivasi }}
+            </blockquote>
+        @else
+            <p class="sp-detail-empty">Belum ada Quotes.</p>
+        @endif
+    </div>
+</section>
 
         <div class="sp-detail-grid">
             <div class="sp-detail-main-column">
@@ -60,23 +94,9 @@
                     </div>
                 </section>
 
-                <section class="sp-detail-card">
-                    <div class="sp-detail-card-heading"><span class="sp-detail-icon">✦</span><div><h2>Tentang Saya</h2><p>Cerita singkat dari alumni</p></div></div>
-                    @if ($alumni->tentang_saya)
-                        <p class="sp-detail-description">{{ $alumni->tentang_saya }}</p>
-                    @else
-                        <p class="sp-detail-empty">Belum ada informasi tentang alumni.</p>
-                    @endif
-                </section>
+                
 
-                <section class="sp-detail-card">
-                    <div class="sp-detail-card-heading"><span class="sp-detail-icon">❝</span><div><h2>Quotes</h2><p>Pesan dan motivasi untuk alumni lainnya</p></div></div>
-                    @if ($alumni->pesan_motivasi)
-                        <blockquote class="sp-motivation">{{ $alumni->pesan_motivasi }}</blockquote>
-                    @else
-                        <p class="sp-detail-empty">Belum ada Quotes.</p>
-                    @endif
-                </section>
+               
             </div>
 
             <aside class="sp-detail-side-column">
@@ -96,7 +116,7 @@
                         <p class="sp-detail-empty">Belum ada riwayat karier.</p>
                     @endforelse
                 </section>
-                <div class="sp-detail-note"><strong>Spotlight Alumni FST</strong><p>Menghubungkan cerita, pengalaman, dan perjalanan alumni Fakultas Sains dan Teknologi.</p></div>
+        
             </aside>
         </div>
     </main>
