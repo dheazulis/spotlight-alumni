@@ -42,29 +42,21 @@
                 <div class="sp-section-heading">
                     <div><span class="sp-eyebrow"></span><h2>Alumni Spotlight</h2><p>Kenalan dengan alumni inspiratif yang telah memberikan dampak nyata.</p></div>
                 </div>
-                <div class="sp-inspiration-carousel" data-carousel>
-                    <button class="sp-carousel-arrow sp-carousel-prev" type="button" aria-label="Alumni sebelumnya" data-carousel-prev>‹</button>
-                    <div class="sp-inspiration-viewport">
-                        <div class="sp-inspiration-track" data-carousel-track>
+                <div class="sp-alumni-grid">
                     @foreach($alumniInspiratif as $item)
-                        <article class="sp-person-card">
-                            <div class="sp-person-photo-wrap">
-                                <img class="sp-person-photo" src="{{ asset('storage/' . $item->alumni->foto_profil) }}" alt="Foto {{ $item->alumni->name }}" loading="lazy">
+                        <article class="sp-alumni-tile">
+                            <div class="sp-alumni-tile-photo">
+                                <img src="{{ asset('storage/' . $item->alumni->foto_profil) }}" alt="Foto {{ $item->alumni->name }}" loading="lazy">
                             </div>
-                            <div class="sp-person-content">
-                                <span class="sp-person-tag">Alumni inspiratif</span>
+                            <div class="sp-alumni-tile-body">
                                 <h3>{{ $item->alumni->name }}</h3>
-                                <p class="sp-person-meta">{{ $item->alumni->program_studi }} <span>·</span> Lulus {{ $item->alumni->tahun_lulus }}</p>
-                                <p class="sp-person-status">{{ $item->alumni->status_setelah_lulus }}</p>
+                                <p class="sp-alumni-tile-meta">{{ $item->alumni->program_studi }} <span>·</span> Lulus {{ $item->alumni->tahun_lulus }}</p>
+                                <p class="sp-alumni-tile-status">{{ $item->alumni->status_setelah_lulus }}</p>
                                 <blockquote>{{ $item->alumni->pesan_motivasi }}</blockquote>
                             </div>
                         </article>
                     @endforeach
-                        </div>
-                    </div>
-                    <button class="sp-carousel-arrow sp-carousel-next" type="button" aria-label="Alumni berikutnya" data-carousel-next>›</button>
                 </div>
-                <div class="sp-carousel-dots" data-carousel-dots aria-label="Pilih slide alumni"></div>
             </section>
         @endif
 
@@ -111,48 +103,5 @@
         <p>Portal informasi, jejaring, dan pengembangan alumni Fakultas Sains dan Teknologi.</p>
         <small>© {{ date('Y') }} Spotlight Alumni FST. Seluruh hak cipta dilindungi.</small>
     </footer>
-    <script>
-        (() => {
-            const carousel = document.querySelector('[data-carousel]');
-            if (!carousel) return;
-            const track = carousel.querySelector('[data-carousel-track]');
-            const cards = Array.from(track.children);
-            const dotsWrap = document.querySelector('[data-carousel-dots]');
-            const prev = carousel.querySelector('[data-carousel-prev]');
-            const next = carousel.querySelector('[data-carousel-next]');
-            let index = 0;
-            const visibleCount = () => window.matchMedia('(max-width: 640px)').matches ? 1 : 2;
-            const maxIndex = () => Math.max(0, cards.length - visibleCount());
-            const render = () => {
-                index = Math.min(index, maxIndex());
-                if (!cards[0]) return;
-                const styles = getComputedStyle(track);
-                const gap = parseFloat(styles.columnGap || styles.gap) || 17;
-                const step = cards[0].getBoundingClientRect().width + gap;
-                track.style.transform = `translateX(-${index * step}px)`;
-                prev.disabled = index === 0;
-                next.disabled = index >= maxIndex();
-                dotsWrap.querySelectorAll('button').forEach((dot, i) => {
-                    dot.classList.toggle('is-active', i === index);
-                    dot.setAttribute('aria-current', i === index ? 'true' : 'false');
-                });
-            };
-            const makeDots = () => {
-                dotsWrap.innerHTML = '';
-                for (let i = 0; i <= maxIndex(); i++) {
-                    const dot = document.createElement('button');
-                    dot.type = 'button';
-                    dot.setAttribute('aria-label', `Tampilkan slide ${i + 1}`);
-                    dot.addEventListener('click', () => { index = i; render(); });
-                    dotsWrap.appendChild(dot);
-                }
-            };
-            prev.addEventListener('click', () => { index = Math.max(0, index - 1); render(); });
-            next.addEventListener('click', () => { index = Math.min(maxIndex(), index + 1); render(); });
-            window.addEventListener('resize', () => { makeDots(); render(); });
-            makeDots();
-            render();
-        })();
-    </script>
 </body>
 </html>
