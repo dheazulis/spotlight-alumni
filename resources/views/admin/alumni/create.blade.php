@@ -1,3 +1,4 @@
+
 @extends('layouts.dashboard')
 
 @section('title', 'Tambah Akun Alumni')
@@ -5,6 +6,35 @@
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/spotlight-form-alumni.css') }}">
+
+<style>
+    /* Mengatur posisi form ke tengah */
+    .fa-page {
+        width: 100%;
+        max-width: 900px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box;
+    }
+
+    .fa-page *,
+    .fa-page *::before,
+    .fa-page *::after {
+        box-sizing: border-box;
+    }
+
+    .fa-card {
+        width: 100%;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    @media (max-width: 768px) {
+        .fa-page {
+            max-width: 100%;
+        }
+    }
+</style>
 @endpush
 
 @section('content')
@@ -17,12 +47,15 @@
 
     <section class="fa-card">
         <h2>Informasi Akun Alumni</h2>
+
         <p class="fa-card-description">
             Masukkan nama lengkap, NIM, dan email alumni.
         </p>
 
         @if (session('status'))
-            <div class="fa-notice">{{ session('status') }}</div>
+            <div class="fa-notice">
+                {{ session('status') }}
+            </div>
         @endif
 
         @if ($errors->any())
@@ -62,6 +95,7 @@
                     placeholder="Masukkan NIM alumni"
                     required
                 >
+
                 <p class="fa-help">
                     NIM digunakan sebagai password awal akun alumni.
                 </p>
@@ -77,6 +111,7 @@
                     placeholder="Masukkan email aktif alumni"
                     required
                 >
+
                 <p class="fa-help">
                     Email digunakan untuk proses verifikasi akun alumni.
                 </p>
@@ -92,10 +127,12 @@
                     Buat Akun Alumni
                 </button>
 
-                <a href="{{ route('admin.alumni.index') }}" class="fa-button fa-button-secondary">
+                <a href="{{ route('admin.alumni.index') }}"
+                   class="fa-button fa-button-secondary">
                     Kembali
                 </a>
             </div>
+
         </form>
     </section>
 </div>

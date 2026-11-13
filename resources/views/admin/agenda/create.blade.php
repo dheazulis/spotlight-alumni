@@ -1,3 +1,4 @@
+
 @extends('layouts.dashboard')
 
 @section('title', 'Tambah Newsletter')
@@ -7,184 +8,218 @@
 <style>
     .agenda-form-page,
     .agenda-form-page * {
-        box-sizing:border-box;
+        box-sizing: border-box;
     }
 
+    /* Membuat seluruh halaman form berada di tengah */
     .agenda-form-page {
-        color:var(--sd-ink,#23342b);
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        color: var(--sd-ink, #23342b);
     }
 
     .agenda-form-heading {
-        margin-bottom:22px;
+        margin-bottom: 22px;
     }
 
     .agenda-form-heading h1 {
-        margin:0;
-        color:var(--sd-green-950,#123d2d);
-        font-size:26px;
-        line-height:1.2;
-        font-weight:750;
+        margin: 0;
+        color: var(--sd-green-950, #123d2d);
+        font-size: 26px;
+        line-height: 1.2;
+        font-weight: 750;
     }
 
     .agenda-form-heading p {
-        margin:9px 0 0;
-        color:var(--sd-muted,#758279);
-        font-size:14px;
-        line-height:1.6;
+        margin: 9px 0 0;
+        color: var(--sd-muted, #758279);
+        font-size: 14px;
+        line-height: 1.6;
     }
 
     .agenda-back {
-        display:inline-flex;
-        align-items:center;
-        margin-bottom:16px;
-        color:var(--sd-green-800,#1d6045);
-        font-size:13px;
-        font-weight:650;
-        text-decoration:none;
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 16px;
+        color: var(--sd-green-800, #1d6045);
+        font-size: 13px;
+        font-weight: 650;
+        text-decoration: none;
     }
 
     .agenda-back:hover {
-        color:var(--sd-green-950,#123d2d);
+        color: var(--sd-green-950, #123d2d);
     }
 
+    /* Card form */
     .agenda-form-card {
-        max-width:900px;
-        background:#fff;
-        border:1px solid var(--sd-line,#e3eae3);
-        border-radius:13px;
-        box-shadow:var(--sd-shadow,0 8px 24px rgba(24,59,42,.06));
-        overflow:hidden;
+        width: 100%;
+        max-width: none;
+        margin: 0 auto;
+        background: #fff;
+        border: 1px solid var(--sd-line, #e3eae3);
+        border-radius: 13px;
+        box-shadow: var(--sd-shadow, 0 8px 24px rgba(24,59,42,.06));
+        overflow: hidden;
     }
 
     .agenda-form-card-head {
-        padding:19px 22px;
-        border-bottom:1px solid var(--sd-line,#e3eae3);
+        padding: 19px 22px;
+        border-bottom: 1px solid var(--sd-line, #e3eae3);
     }
 
     .agenda-form-card-head h2 {
-        margin:0;
-        color:var(--sd-green-950,#123d2d);
-        font-size:15px;
-        font-weight:750;
+        margin: 0;
+        color: var(--sd-green-950, #123d2d);
+        font-size: 15px;
+        font-weight: 750;
     }
 
     .agenda-form-card-head p {
-        margin:5px 0 0;
-        color:var(--sd-muted,#758279);
-        font-size:13px;
-        line-height:1.5;
+        margin: 5px 0 0;
+        color: var(--sd-muted, #758279);
+        font-size: 13px;
+        line-height: 1.5;
     }
 
-    .agenda-form-body { padding:22px; }
+    .agenda-form-body {
+        padding: 22px;
+    }
 
     .agenda-form-page .form-label {
-        display:block;
-        margin-bottom:7px;
-        color:#394b40;
-        font-size:13px;
-        font-weight:650;
+        display: block;
+        margin-bottom: 7px;
+        color: #394b40;
+        font-size: 13px;
+        font-weight: 650;
     }
 
     .agenda-form-page .form-control,
     .agenda-form-page .form-select {
-        width:100%;
-        min-height:41px;
-        padding:9px 11px;
-        border:1px solid #dfe7df;
-        border-radius:8px;
-        color:var(--sd-ink,#23342b);
-        background:#fff;
-        font:400 13px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-        box-shadow:none;
+        width: 100%;
+        min-height: 41px;
+        padding: 9px 11px;
+        border: 1px solid #dfe7df;
+        border-radius: 8px;
+        color: var(--sd-ink, #23342b);
+        background: #fff;
+        font: 400 13px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        box-shadow: none;
     }
 
     .agenda-form-page textarea.form-control {
-        min-height:115px;
-        resize:vertical;
+        min-height: 115px;
+        resize: vertical;
     }
 
     .agenda-form-page .form-control:focus,
     .agenda-form-page .form-select:focus {
-        border-color:#8bb69a;
-        outline:0;
-        box-shadow:0 0 0 3px rgba(40,118,83,.10);
+        border-color: #8bb69a;
+        outline: 0;
+        box-shadow: 0 0 0 3px rgba(40,118,83,.10);
     }
 
     .agenda-form-page .form-text {
-        margin-top:6px;
-        color:#87938a;
-        font-size:11px;
+        margin-top: 6px;
+        color: #87938a;
+        font-size: 11px;
     }
 
+    /* Preview gambar */
     .agenda-image-preview {
-        display:none;
-        max-width:100%;
-        width:380px;
-        max-height:230px;
-        object-fit:contain;
-        margin-top:12px;
-        padding:5px;
-        border:1px solid var(--sd-line,#e3eae3);
-        border-radius:9px;
-        background:#f8faf7;
+        display: none;
+        max-width: 100%;
+        width: 380px;
+        max-height: 230px;
+        object-fit: contain;
+        margin-top: 12px;
+        padding: 5px;
+        border: 1px solid var(--sd-line, #e3eae3);
+        border-radius: 9px;
+        background: #f8faf7;
     }
 
+    /* Tombol */
     .agenda-form-actions {
-        display:flex;
-        justify-content:flex-end;
-        flex-wrap:wrap;
-        gap:8px;
-        margin-top:8px;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
     }
 
     .agenda-form-btn {
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        min-height:39px;
-        padding:9px 15px;
-        border-radius:8px;
-        font:650 13px Inter,ui-sans-serif,system-ui,sans-serif;
-        text-decoration:none;
-        cursor:pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 39px;
+        padding: 9px 15px;
+        border-radius: 8px;
+        font: 650 13px Inter, ui-sans-serif, system-ui, sans-serif;
+        text-decoration: none;
+        cursor: pointer;
+        transition: .2s ease;
     }
 
     .agenda-form-save {
-        color:#fff;
-        background:var(--sd-green-800,#1d6045);
-        border:1px solid var(--sd-green-800,#1d6045);
+        color: #fff;
+        background: var(--sd-green-800, #1d6045);
+        border: 1px solid var(--sd-green-800, #1d6045);
     }
 
     .agenda-form-save:hover {
-        color:#fff;
-        background:var(--sd-green-900,#174b37);
+        color: #fff;
+        background: var(--sd-green-900, #174b37);
     }
 
     .agenda-form-cancel {
-        color:#59675e;
-        background:#fff;
-        border:1px solid #dfe7df;
+        color: #59675e;
+        background: #fff;
+        border: 1px solid #dfe7df;
     }
 
     .agenda-form-cancel:hover {
-        color:var(--sd-green-900,#174b37);
-        background:#f7faf7;
+        color: var(--sd-green-900, #174b37);
+        background: #f7faf7;
     }
 
+    /* Pesan error */
     .agenda-form-error {
-        margin-bottom:17px;
-        padding:12px 15px;
-        border:1px solid #f2d6d6;
-        border-radius:9px;
-        background:#fff1f1;
-        color:#b83232;
-        font-size:13px;
+        margin-bottom: 17px;
+        padding: 12px 15px;
+        border: 1px solid #f2d6d6;
+        border-radius: 9px;
+        background: #fff1f1;
+        color: #b83232;
+        font-size: 13px;
     }
 
-    @media(max-width:680px) {
-        .agenda-form-heading h1 { font-size:22px; }
-        .agenda-form-body { padding:16px; }
-        .agenda-form-card-head { padding:16px; }
+    /* Tampilan HP */
+    @media(max-width: 680px) {
+        .agenda-form-page {
+            max-width: 100%;
+        }
+
+        .agenda-form-heading h1 {
+            font-size: 22px;
+        }
+
+        .agenda-form-body {
+            padding: 16px;
+        }
+
+        .agenda-form-card-head {
+            padding: 16px;
+        }
+
+        .agenda-form-actions {
+            flex-direction: column-reverse;
+        }
+
+        .agenda-form-btn {
+            width: 100%;
+        }
     }
 </style>
 @endpush
@@ -239,11 +274,15 @@
                         type="text"
                         name="judul"
                         id="judul"
-                        class="form-control"
+                        class="form-control @error('judul') is-invalid @enderror"
                         value="{{ old('judul') }}"
                         placeholder="Masukkan judul newsletter"
                         required
                     >
+
+                    @error('judul')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
@@ -255,9 +294,13 @@
                         name="deskripsi"
                         id="deskripsi"
                         rows="5"
-                        class="form-control"
+                        class="form-control @error('deskripsi') is-invalid @enderror"
                         placeholder="Tuliskan informasi newsletter..."
                     >{{ old('deskripsi') }}</textarea>
+
+                    @error('deskripsi')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
@@ -269,10 +312,14 @@
                         type="text"
                         name="lokasi"
                         id="lokasi"
-                        class="form-control"
+                        class="form-control @error('lokasi') is-invalid @enderror"
                         value="{{ old('lokasi') }}"
                         placeholder="Masukkan lokasi jika ada"
                     >
+
+                    @error('lokasi')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="row">
@@ -286,9 +333,13 @@
                             type="date"
                             name="tanggal_mulai"
                             id="tanggal_mulai"
-                            class="form-control"
+                            class="form-control @error('tanggal_mulai') is-invalid @enderror"
                             value="{{ old('tanggal_mulai') }}"
                         >
+
+                        @error('tanggal_mulai')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="col-md-6 mb-3">
@@ -300,9 +351,13 @@
                             type="date"
                             name="tanggal_selesai"
                             id="tanggal_selesai"
-                            class="form-control"
+                            class="form-control @error('tanggal_selesai') is-invalid @enderror"
                             value="{{ old('tanggal_selesai') }}"
                         >
+
+                        @error('tanggal_selesai')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="col-md-6 mb-3">
@@ -314,9 +369,13 @@
                             type="time"
                             name="waktu_mulai"
                             id="waktu_mulai"
-                            class="form-control"
+                            class="form-control @error('waktu_mulai') is-invalid @enderror"
                             value="{{ old('waktu_mulai') }}"
                         >
+
+                        @error('waktu_mulai')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="col-md-6 mb-3">
@@ -328,9 +387,13 @@
                             type="time"
                             name="waktu_selesai"
                             id="waktu_selesai"
-                            class="form-control"
+                            class="form-control @error('waktu_selesai') is-invalid @enderror"
                             value="{{ old('waktu_selesai') }}"
                         >
+
+                        @error('waktu_selesai')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
 
                 </div>
@@ -344,7 +407,7 @@
                         type="file"
                         name="gambar"
                         id="gambar"
-                        class="form-control"
+                        class="form-control @error('gambar') is-invalid @enderror"
                         accept=".jpg,.jpeg,.png,.webp"
                     >
 
@@ -357,6 +420,10 @@
                         class="agenda-image-preview"
                         alt="Preview gambar newsletter"
                     >
+
+                    @error('gambar')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="mb-4">
@@ -364,18 +431,34 @@
                         Status
                     </label>
 
-                    <select name="status" id="status" class="form-select" required>
-                        <option value="draft" {{ old('status') == 'draft' ? 'selected' : '' }}>
+                    <select
+                        name="status"
+                        id="status"
+                        class="form-select @error('status') is-invalid @enderror"
+                        required
+                    >
+                        <option
+                            value="draft"
+                            {{ old('status', 'draft') === 'draft' ? 'selected' : '' }}
+                        >
                             Draft
                         </option>
 
-                        <option value="publikasi" {{ old('status') == 'publikasi' ? 'selected' : '' }}>
+                        <option
+                            value="publikasi"
+                            {{ old('status') === 'publikasi' ? 'selected' : '' }}
+                        >
                             Publikasi
                         </option>
                     </select>
+
+                    @error('status')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="agenda-form-actions">
+
                     <a
                         href="{{ route('admin.agenda.index') }}"
                         class="agenda-form-btn agenda-form-cancel"
@@ -389,6 +472,7 @@
                     >
                         Simpan Newsletter
                     </button>
+
                 </div>
 
             </form>
@@ -412,6 +496,11 @@ document.getElementById('gambar')?.addEventListener('change', function (event) {
         preview.src = preview.dataset.objectUrl;
         preview.style.display = 'block';
     } else {
+        if (preview.dataset.objectUrl) {
+            URL.revokeObjectURL(preview.dataset.objectUrl);
+            delete preview.dataset.objectUrl;
+        }
+
         preview.src = '';
         preview.style.display = 'none';
     }
