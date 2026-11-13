@@ -50,7 +50,7 @@
 
                 <div class="dh-stat-card">
                     <div class="dh-stat-icon dh-icon-green">
-                        <i class="fas fa-user-graduate"></i>
+                        <i class="fas fa-user-graduate">👥</i>
                     </div>
 
                     <div class="dh-stat-info">
@@ -62,7 +62,7 @@
 
                 <div class="dh-stat-card">
                     <div class="dh-stat-icon dh-icon-blue">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-lightbulb">📄</i>
                     </div>
 
                     <div class="dh-stat-info">
@@ -74,7 +74,7 @@
 
                 <div class="dh-stat-card">
                     <div class="dh-stat-icon dh-icon-orange">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock">◷</i>
                     </div>
 
                     <div class="dh-stat-info">
@@ -86,7 +86,7 @@
 
                 <div class="dh-stat-card">
                     <div class="dh-stat-icon dh-icon-purple">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle">☑</i>
                     </div>
 
                     <div class="dh-stat-info">

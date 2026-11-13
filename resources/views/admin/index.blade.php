@@ -255,7 +255,7 @@
 
             <article class="ad-stat ad-stat-main">
                 <div class="ad-stat-label">
-                    <span class="ad-stat-icon">♙</span>
+                    <span class="ad-stat-icon">👥</span>
                     Total Alumni
                 </div>
                 <div class="ad-stat-value">
@@ -266,7 +266,7 @@
 
             <article class="ad-stat">
                 <div class="ad-stat-label">
-                    <span class="ad-stat-icon">↗</span>
+                    <span class="ad-stat-icon">📄</span>
                     Pertumbuhan Lulusan
                 </div>
                 <div class="ad-stat-value">
@@ -287,7 +287,7 @@
 
             <article class="ad-stat">
                 <div class="ad-stat-label">
-                    <span class="ad-stat-icon">▣</span>
+                    <span class="ad-stat-icon">🕒</span>
                     Alumni Bekerja
                 </div>
                 <div class="ad-stat-value">
@@ -298,7 +298,7 @@
 
             <article class="ad-stat">
                 <div class="ad-stat-label">
-                    <span class="ad-stat-icon">▤</span>
+                    <span class="ad-stat-icon">☑</span>
                     Melanjutkan Studi
                 </div>
                 <div class="ad-stat-value">
@@ -309,7 +309,7 @@
 
             <article class="ad-stat">
                 <div class="ad-stat-label">
-                    <span class="ad-stat-icon">⌕</span>
+                    <span class="ad-stat-icon">🔍</span>
                     Mencari Kerja
                 </div>
                 <div class="ad-stat-value">
@@ -320,7 +320,7 @@
 
             <article class="ad-stat">
                 <div class="ad-stat-label">
-                    <span class="ad-stat-icon">✓</span>
+                    <span class="ad-stat-icon">✅</span>
                     Alumni Aktif
                 </div>
                 <div class="ad-stat-value">
@@ -331,7 +331,7 @@
 
             <article class="ad-stat">
                 <div class="ad-stat-label">
-                    <span class="ad-stat-icon">○</span>
+                    <span class="ad-stat-icon">⏸️</span>
                     Alumni Pasif
                 </div>
                 <div class="ad-stat-value">
