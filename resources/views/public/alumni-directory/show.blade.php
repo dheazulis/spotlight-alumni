@@ -89,7 +89,6 @@
                         <div class="sp-info-item"><small>Program Studi</small><strong>{{ $alumni->program_studi ?: '-' }}</strong></div>
                         <div class="sp-info-item"><small>Tahun Masuk</small><strong>{{ $alumni->tahun_masuk ?: '-' }}</strong></div>
                         <div class="sp-info-item"><small>Tahun Lulus</small><strong>{{ $alumni->tahun_lulus ?: '-' }}</strong></div>
-                        <div class="sp-info-item"><small>Nomor HP</small><strong>{{ $alumni->nomor_hp ?: '-' }}</strong></div>
                         <div class="sp-info-item"><small>Status Setelah Lulus</small><strong>{{ $alumni->status_setelah_lulus ?: '-' }}</strong></div>
                     </div>
                 </section>
