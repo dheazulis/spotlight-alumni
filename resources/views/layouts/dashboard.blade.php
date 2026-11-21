@@ -44,14 +44,17 @@
                         <a href="{{ route('alumni.job-vacancies.index') }}"><span class="sd-nav-icon">▤</span>Informasi Lowongan Kerja</a>
                     @endif
 
-                    <form action="{{ route('logout') }}" method="POST" style="margin-top:24px">
-                    @csrf
-                    <button type="submit" class="sd-logout-button">
-                        <span class="sd-nav-icon">↪</span>
-                        Logout
-                    </button>
-                </form>
+                    <!-- TOMBOL LOGOUT -->
+                    <div class="sd-logout-wrapper">
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
 
+                            <button type="submit" class="sd-logout-button">
+                                <span class="sd-logout-icon">⇥</span>
+                                <span>Logout</span>
+                            </button>
+                        </form>
+                    </div>
                 </nav>
                 <div class="sd-sidebar-bottom">Spotlight Alumni FST<br>Portal informasi dan jejaring alumni</div>
             </aside>

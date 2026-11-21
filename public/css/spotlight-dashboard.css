@@ -12,3 +12,58 @@
     border-radius: 8px;
     padding: 3px;
 }
+
+/* PERBAIKAN TOMBOL LOGOUT */
+.sd-nav {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.sd-logout-wrapper {
+    margin-top: auto;
+    padding: 18px 0 15px;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+}
+
+.sd-logout-wrapper form {
+    width: 100%;
+    margin: 0;
+}
+
+.sd-logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 13px;
+    width: 100%;
+    padding: 13px 15px;
+    background: var(--sd-green-800);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 650;
+    text-align: left;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.sd-logout-icon {
+    width: 19px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 1;
+}
+
+.sd-logout-button:hover {
+    background: var(--sd-green-700);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, .12);
+}
+
+.sd-logout-button:active {
+    transform: scale(.98);
+}
