@@ -37,24 +37,49 @@
             <div class="sp-hero-decoration" aria-hidden="true"><span></span><span></span><span></span></div>
         </section>
 
+
         @if(isset($alumniInspiratif) && $alumniInspiratif->isNotEmpty())
             <section class="sp-section" id="alumni-inspiratif">
                 <div class="sp-section-heading">
-                    <div><span class="sp-eyebrow"></span><h2>Alumni Spotlight</h2><p>Kenalan dengan alumni inspiratif yang telah memberikan dampak nyata.</p></div>
+                    <div>
+                        <span class="sp-eyebrow"></span>
+                        <h2>Alumni Spotlight</h2>
+                        <p>Kenalan dengan alumni inspiratif yang telah memberikan dampak nyata.</p>
+                    </div>
                 </div>
+
                 <div class="sp-alumni-grid">
                     @foreach($alumniInspiratif as $item)
-                        <article class="sp-alumni-tile">
-                            <div class="sp-alumni-tile-photo">
-                                <img src="{{ asset('storage/' . $item->alumni->foto_profil) }}" alt="Foto {{ $item->alumni->name }}" loading="lazy">
-                            </div>
-                            <div class="sp-alumni-tile-body">
-                                <h3>{{ $item->alumni->name }}</h3>
-                                <p class="sp-alumni-tile-meta">{{ $item->alumni->program_studi }} <span>·</span> Lulus {{ $item->alumni->tahun_lulus }}</p>
-                                <p class="sp-alumni-tile-status">{{ $item->alumni->status_setelah_lulus }}</p>
-                                <blockquote>{{ $item->alumni->pesan_motivasi }}</blockquote>
-                            </div>
-                        </article>
+                    <a href="{{ route('public.alumni.show', $item->alumni->id) }}"
+                    class="text-decoration-none text-reset">
+
+                            <article class="sp-alumni-tile">
+                                <div class="sp-alumni-tile-photo">
+                                    <img src="{{ asset('storage/' . $item->alumni->foto_profil) }}"
+                                        alt="Foto {{ $item->alumni->name }}"
+                                        loading="lazy">
+                                </div>
+
+                                <div class="sp-alumni-tile-body">
+                                    <h3>{{ $item->alumni->name }}</h3>
+
+                                    <p class="sp-alumni-tile-meta">
+                                        {{ $item->alumni->program_studi }}
+                                        <span>·</span>
+                                        Lulus {{ $item->alumni->tahun_lulus }}
+                                    </p>
+
+                                    <p class="sp-alumni-tile-status">
+                                        {{ $item->alumni->status_setelah_lulus }}
+                                    </p>
+
+                                    <blockquote>
+                                        {{ $item->alumni->pesan_motivasi }}
+                                    </blockquote>
+                                </div>
+                            </article>
+
+                        </a>
                     @endforeach
                 </div>
             </section>
@@ -75,20 +100,42 @@
             @if(isset($agendas) && $agendas->isNotEmpty())
                 <div class="sp-agenda-grid">
                     @foreach($agendas as $agenda)
-                    <a href="{{ route('agenda.show', $agenda->id) }}"class="text-decoration-none text-reset"></a>
-                        <article class="sp-agenda-card">
-                            @if($agenda->gambar)
-                                <div class="sp-agenda-image-wrap"><img src="{{ asset('storage/' . $agenda->gambar) }}" alt="{{ $agenda->judul }}" class="sp-agenda-image" loading="lazy"></div>
-                            @else
-                                <div class="sp-agenda-placeholder"><img src="{{ asset('images/logo-fst.png') }}" alt="Logo FST"><small>Newsletter FST</small></div>
-                            @endif
-                            <div class="sp-agenda-content">
-                                <span class="sp-agenda-date">{{ $agenda->tanggal_mulai->translatedFormat('d F Y') }}</span>
-                                <h3>{{ $agenda->judul }}</h3>
-                                @if($agenda->lokasi)<p class="sp-agenda-location">⌖ {{ $agenda->lokasi }}</p>@endif
-                                <p class="sp-agenda-description">{{ \Illuminate\Support\Str::limit(strip_tags($agenda->deskripsi), 125) }}</p>
-                            </div>
-                        </article>
+                        <a href="{{ route('agenda.show', $agenda->id) }}"
+                        class="text-decoration-none text-reset">
+
+                            <article class="sp-agenda-card">
+                                @if($agenda->gambar)
+                                    <div class="sp-agenda-image-wrap">
+                                        <img src="{{ asset('storage/' . $agenda->gambar) }}"
+                                            alt="{{ $agenda->judul }}"
+                                            class="sp-agenda-image"
+                                            loading="lazy">
+                                    </div>
+                                @else
+                                    <div class="sp-agenda-placeholder">
+                                        <img src="{{ asset('images/logo-fst.png') }}" alt="Logo FST">
+                                        <small>Newsletter FST</small>
+                                    </div>
+                                @endif
+
+                                <div class="sp-agenda-content">
+                                    <span class="sp-agenda-date">
+                                        {{ $agenda->tanggal_mulai->translatedFormat('d F Y') }}
+                                    </span>
+
+                                    <h3>{{ $agenda->judul }}</h3>
+
+                                    @if($agenda->lokasi)
+                                        <p class="sp-agenda-location">⌖ {{ $agenda->lokasi }}</p>
+                                    @endif
+
+                                    <p class="sp-agenda-description">
+                                        {{ \Illuminate\Support\Str::limit(strip_tags($agenda->deskripsi), 125) }}
+                                    </p>
+                                </div>
+                            </article>
+
+                        </a>
                     @endforeach
                 </div>
             @else
