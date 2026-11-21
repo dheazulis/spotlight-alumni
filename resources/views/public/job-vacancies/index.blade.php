@@ -43,14 +43,15 @@
             white-space: nowrap;
         }
 
-        /* CARD INFO LOKER */
         .sp-loker-list {
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
 
+        /* CARD LOWONGAN */
         .sp-loker-card {
+            position: relative;
             display: flex;
             align-items: center;
             gap: 22px;
@@ -60,11 +61,15 @@
             padding: 30px;
             box-shadow: 0 5px 18px rgba(25, 65, 43, .04);
             transition: transform .2s ease, box-shadow .2s ease;
+            cursor: pointer;
         }
 
-        .sp-loker-card:hover {
+        .sp-loker-card:hover,
+        .sp-loker-card:focus-within {
             transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(25, 65, 43, .08);
+            box-shadow: 0 8px 22px rgba(25, 65, 43, .12);
+            border-color: #cbded0;
+            z-index: 10;
         }
 
         .sp-loker-icon {
@@ -103,6 +108,68 @@
             color: #78847b;
             font-size: 14px;
             line-height: 1.8;
+        }
+
+        /* DETAIL HOVER */
+        .sp-loker-detail {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+            max-height: 350px;
+            overflow-y: auto;
+            padding: 24px 30px;
+            background: #fff;
+            border: 1px solid #dce9df;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(25, 65, 43, .16);
+            color: #526157;
+            z-index: 20;
+            cursor: default;
+        }
+
+        .sp-loker-card:hover .sp-loker-detail,
+        .sp-loker-card:focus-within .sp-loker-detail {
+            display: block;
+        }
+
+        .sp-loker-detail h3 {
+            color: #244c38;
+            font-size: 15px;
+            margin: 0 0 8px;
+        }
+
+        .sp-loker-detail p {
+            color: #65736a;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 0 0 18px;
+            white-space: pre-line;
+        }
+
+        .sp-loker-detail a {
+            color: #176044;
+            font-weight: 600;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .sp-loker-detail a:hover {
+            text-decoration: underline;
+        }
+
+        .sp-loker-detail-section {
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid #edf1ed;
+        }
+
+        .sp-loker-detail-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .sp-loker-empty {
@@ -160,6 +227,10 @@
             .sp-loker-meta {
                 font-size: 13px;
             }
+
+            .sp-loker-detail {
+                padding: 20px;
+            }
         }
 
         @media (max-width: 420px) {
@@ -173,6 +244,23 @@
                 height: 45px;
                 min-width: 45px;
                 font-size: 21px;
+            }
+        }
+
+        /* Pada layar sentuh, detail dapat dibuka dengan fokus keyboard */
+        @media (hover: none) {
+            .sp-loker-detail {
+                position: static;
+                width: 100%;
+                margin-top: 15px;
+                display: block;
+                box-shadow: none;
+                max-height: none;
+            }
+
+            .sp-loker-card {
+                flex-wrap: wrap;
+                cursor: default;
             }
         }
     </style>
@@ -225,7 +313,7 @@
 
             @forelse ($lowongans as $lowongan)
 
-                <article class="sp-loker-card">
+                <article class="sp-loker-card" tabindex="0">
 
                     <div class="sp-loker-icon" aria-hidden="true">
                         ▤
@@ -262,6 +350,43 @@
                                 </span>
                             @endif
 
+                        </div>
+                    </div>
+
+                    <!-- Detail muncul otomatis ketika card diarahkan -->
+                    <div class="sp-loker-detail">
+
+                        <div class="sp-loker-detail-section">
+                            <h3>Deskripsi Pekerjaan</h3>
+                            <p>{{ $lowongan->deskripsi ?: 'Informasi deskripsi pekerjaan belum tersedia.' }}</p>
+                        </div>
+
+                        <div class="sp-loker-detail-section">
+                            <h3>Kualifikasi</h3>
+                            <p>{{ $lowongan->kualifikasi ?: 'Informasi kualifikasi belum tersedia.' }}</p>
+                        </div>
+
+                        <div class="sp-loker-detail-section">
+                            <h3>Informasi Lamaran</h3>
+
+                            @if ($lowongan->kontak_lamaran)
+                                <p>Kontak: {{ $lowongan->kontak_lamaran }}</p>
+                            @endif
+
+                            @if ($lowongan->tautan_lamaran)
+                                <p>
+                                    Tautan Lamaran:
+                                    <a href="{{ $lowongan->tautan_lamaran }}"
+                                       target="_blank"
+                                       rel="noopener noreferrer">
+                                        Lihat Link Lamaran
+                                    </a>
+                                </p>
+                            @endif
+
+                            @if (!$lowongan->kontak_lamaran && !$lowongan->tautan_lamaran)
+                                <p>Informasi kontak atau tautan lamaran belum tersedia.</p>
+                            @endif
                         </div>
 
                     </div>

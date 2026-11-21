@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -125,29 +126,27 @@ class EmailOtpController extends Controller
             ]);
         }
 
+        // Jika batas percobaan sudah tercapai, logout pengguna.
         if ($record->attempts >= 5) {
-            DB::table('email_otps')
-                ->where('id', $record->id)
-                ->delete();
-
-            return back()->withErrors([
-                'otp' => 'Batas percobaan tercapai. Minta OTP baru.',
-            ]);
+            return $this->logoutAfterOtpAttemptsExceeded(
+                $request,
+                $record->id
+            );
         }
 
+        // Periksa apakah OTP yang dimasukkan benar.
         if (!Hash::check($request->otp, $record->otp_hash)) {
             $attempts = $record->attempts + 1;
 
+            // Jika salah sebanyak 5 kali, langsung logout.
             if ($attempts >= 5) {
-                DB::table('email_otps')
-                    ->where('id', $record->id)
-                    ->delete();
-
-                return back()->withErrors([
-                    'otp' => 'Batas percobaan tercapai. Minta OTP baru.',
-                ]);
+                return $this->logoutAfterOtpAttemptsExceeded(
+                    $request,
+                    $record->id
+                );
             }
 
+            // Simpan jumlah percobaan yang salah.
             DB::table('email_otps')
                 ->where('id', $record->id)
                 ->update([
@@ -194,5 +193,34 @@ class EmailOtpController extends Controller
 
         return redirect('/dashboard')
             ->with('status', 'Email berhasil diverifikasi.');
+    }
+
+    /**
+     * Logout otomatis ketika pengguna salah memasukkan OTP 5 kali.
+     */
+    private function logoutAfterOtpAttemptsExceeded(
+        Request $request,
+        int $otpId
+    ) {
+        // Hapus OTP yang sudah mencapai batas percobaan.
+        DB::table('email_otps')
+            ->where('id', $otpId)
+            ->delete();
+
+        // Logout pengguna.
+        Auth::logout();
+
+        // Hapus sesi login lama.
+        $request->session()->invalidate();
+
+        // Buat token CSRF baru.
+        $request->session()->regenerateToken();
+
+        // Arahkan kembali ke halaman login.
+        return redirect()
+            ->route('login')
+            ->withErrors([
+                'username' => 'Kamu telah salah memasukkan kode OTP sebanyak 5 kali. Silakan login kembali.',
+            ]);
     }
 }
