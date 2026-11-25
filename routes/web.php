@@ -157,9 +157,7 @@ Route::get('/dashboard', function () {
             ->where('program_studi', '!=', '')
             ->whereNotNull('tahun_lulus')
             ->whereNotNull('status_setelah_lulus')
-            ->where('status_setelah_lulus', '!=', '')
-            ->whereNotNull('nomor_hp')
-            ->where('nomor_hp', '!=', '');
+            ->where('status_setelah_lulus', '!=', '');
 
         $jumlahAktif = (clone $profilAktifQuery)->count();
 

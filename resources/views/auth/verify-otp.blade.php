@@ -105,6 +105,20 @@
             background: #e4f0e8;
             color: #1d6045;
         }
+
+        .cancel-login {
+            margin-top: 12px;
+        }
+
+        .cancel-login button {
+            background: #ffffff;
+            color: #1d6045;
+            border: 1px solid #1d6045;
+        }
+
+        .cancel-login button:hover {
+            background: #f1f7f3;
+        }
     </style>
 </head>
 <body>
@@ -148,6 +162,11 @@
         <form class="resend" action="{{ route('otp.send') }}" method="POST">
             @csrf
             <button type="submit">Kirim OTP</button>
+        </form>
+
+        <form class="cancel-login" action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit">Batalkan Login</button>
         </form>
     </main>
 </body>

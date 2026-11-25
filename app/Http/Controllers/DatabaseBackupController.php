@@ -40,7 +40,7 @@ class DatabaseBackupController extends Controller
         $backupFolder = config('backup.backup.name');
 
         $timestamp = now()->format('Y-m-d-H-i-s');
-        $filename = $timestamp . '.zip';
+        $filename = 'backup-pengaman-' .$timestamp . '.zip';
 
         $tempSql = storage_path('app/' . $timestamp . '.sql');
         $tempZip = storage_path('app/' . $timestamp . '.zip');

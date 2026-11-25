@@ -120,16 +120,6 @@
                 >
             </div>
 
-            <div class="field">
-                <label for="nomor_hp">Nomor HP</label>
-                <input
-                    type="text"
-                    id="nomor_hp"
-                    name="nomor_hp"
-                    maxlength="20"
-                    value="{{ old('nomor_hp', $user->nomor_hp) }}"
-                >
-            </div>
 
             <div class="field">
                 <label for="status_setelah_lulus">Status Setelah Lulus</label>

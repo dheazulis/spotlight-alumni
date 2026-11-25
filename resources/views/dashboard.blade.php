@@ -328,11 +328,6 @@
                         <strong>{{ $alumni->tahun_lulus ?? '-' }}</strong>
                     </div>
 
-                    <div class="dh-data-item">
-                        <small>Nomor HP</small>
-                        <strong>{{ $alumni->nomor_hp ?? '-' }}</strong>
-                    </div>
-
                 </div>
             </div>
 

@@ -62,7 +62,6 @@ class AlumniProfileController extends Controller
                     }
                 },
             ],
-            'nomor_hp' => ['nullable', 'string', 'max:20'],
             'status_setelah_lulus' => [
                 'nullable',
                 'in:Bekerja,Wirausaha,Melanjutkan Studi,Belum Bekerja',

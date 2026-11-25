@@ -290,6 +290,18 @@
                 padding: 14px 9px;
                 font-size: 12px;
             }
+
+            .brand-home-link {
+                display: inline-block;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .brand-home-link:focus-visible {
+                outline: 2px solid #176346;
+                outline-offset: 5px;
+                border-radius: 5px;
+            }
         }
     </style>
 </head>
@@ -320,20 +332,23 @@
             <div class="login-card">
 
                 <div class="brand-header">
-                    <img
-                        src="{{ asset('images/logo-fst.png') }}"
-                        alt="Logo Fakultas Sains dan Teknologi"
-                        class="logo"
-                    >
+                    <a href="{{ route('home') }}" class="brand-home-link"
+                    aria-label="Kembali ke Beranda Spotlight Alumni FST">
 
-                    <h1>Spotlight Alumni</h1>
+                        <img
+                            src="{{ asset('images/logo-fst.png') }}"
+                            alt="Logo Fakultas Sains dan Teknologi"
+                            class="logo"
+                        >
+
+                        <h1>Spotlight Alumni</h1>
+                    </a>
 
                     <p class="subtitle">
                         Sistem Informasi Alumni<br>
                         Fakultas Sains dan Teknologi
                     </p>
                 </div>
-
                 <form action="{{ route('login.process') }}" method="POST">
                     @csrf
 
